@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="login-card" aria-labelledby="login-title">
+        <h1 id="login-title">账号登录</h1>
+        <form id="login-form" novalidate>
+          <div class="form-row">
+            <label class="form-label" for="username">账号</label>
+            <input
+              class="form-input"
+              type="text"
+              id="username"
+              name="username"
+              autocomplete="username"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="password">密码</label>
+            <input
+              class="form-input"
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+          <div class="form-row form-row--captcha">
+            <label class="form-label" for="captcha-input">验证码</label>
+            <input
+              class="form-input"
+              type="text"
+              id="captcha-input"
+              maxlength="6"
+              autocomplete="off"
+              required
+            />
+            <button
+              class="captcha-button"
+              type="button"
+              id="refresh-captcha"
+              aria-label="刷新验证码"
+            >↻</button>
+            <output class="captcha-display" id="captcha-display" aria-live="polite"></output>
+          </div>
+          <p class="form-error" id="form-error" role="alert" aria-live="assertive"></p>
+          <button class="submit-button" type="submit">登录</button>
+        </form>
+      </section>
+    </main>
+    <script src="login.js"></script>
+  </body>
+</html>
